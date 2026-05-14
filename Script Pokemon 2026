@@ -1,27 +1,26 @@
 import random
 
+
 print('-Olá, caro treinador! Vamos nos aventurar nessa linda jornada!')
 
 nome = input('Primeiro por favor digite o seu nome: ')
-print('-Que ótimo lhe conhecer!', nome,',' ' que nome bonito!')
+print('-Que ótimo lhe conhecer!', nome, ',' ' que nome bonito!')
 
 n = input('-O seu nome está correto? (s/n): ').lower()
 
-while n not in ('s','n'):
+while n not in ('s', 'n'):
     n = input('-Não entendi, está ou não está correto? (s/n): ').lower()
 
 if n == 's':
     print('-1...2...3... Pronto! Anotado!')
-
 
 if n == 'n':
     print('-Ah, erros acontecem né? Sem problema, vamos de novo!')
     nome = input('Digite seu nome novamente: ')
     n = input('-O seu nome está correto? (s/n): ').lower()
 
-while n not in ('s','n'):
+while n not in ('s', 'n'):
     n = input('-Não entendi, está ou não está correto? (s/n): ').lower()
-
 
 if n == 'n':
     print('-Ah, erros acontecem né? Mesmo que seja mais de uma vez... Sem problema, vamos de novo!')
@@ -34,34 +33,31 @@ while n not in 's':
     if n == 's':
         print('-1...2...3... Pronto! Anotado!')
 
-
-
 print('-Que ótimo então,', nome, 'Vamos começar!')
 
-print('-Primeiro de tudo: Aqui nós usamos a imaginação! Então imagine uma mesa com 3 pokemons. Vamos escolher o seu parceiro de batalha')
+print(
+    '-Primeiro de tudo: Aqui nós usamos a imaginação! Então imagine uma mesa com 3 pokemons. Vamos escolher o seu parceiro de batalha')
 print('1 - Bulbasaur')
 print('2 - Charmander')
 print('3 - Squirtle')
 
-opcoes = ['1','2','3']
+opcoes = ['1', '2', '3']
 
 escolha = input('Escolha seu Pokémon: ')
 
-
 if escolha == '1':
-    print('Você escolheu Bulbasaur do tipo Grass!')
+    print('Você escolheu Bulbasaur do tipo Planta!')
 
 elif escolha == '2':
-    print('Você escolheu Charmander do tipo Fire!')
+    print('Você escolheu Charmander do tipo Fogo!')
 
 elif escolha == '3':
-    print('Você escolheu Squirtle do tipo Water!')
+    print('Você escolheu Squirtle do tipo Água!')
 
-while escolha not in ('1','2','3'):
+while escolha not in ('1', '2', '3'):
     print('1-Bulbasaur/ 2-Charmander/ 3-Squirtle')
     print('-Só tem 3 pokemons aqui infelizmente. Mas esses daqui são bem especiais, tenta de novo.')
     escolha = input('Qual você quer escolher ?: ')
-
 
 confirmar = input('-Tem certeza de sua escolha? s/n ').lower()
 
@@ -90,11 +86,11 @@ while escolha not in ('1', '2', '3'):
     escolha = input('Qual você quer escolher ?: ')
 
 if escolha == '1':
-    print(nome,':','Vamos nessa Bulbasaur!')
+    print(nome, ':', 'Vamos nessa Bulbasaur!')
 elif escolha == '2':
-    print(nome,':','Vamos nessa Charmander')
+    print(nome, ':', 'Vamos nessa Charmander')
 elif escolha == '3':
-    print(nome,':','Vamos nessa Squirtled!')
+    print(nome, ':', 'Vamos nessa Squirtled!')
 
 opcoes.remove(escolha)
 
@@ -104,7 +100,7 @@ print("-Hmm...")
 
 print('-Você está querendo uma batalha não é? Eu sei que sim, então eu serei seu oponente')
 
-print('O narrador está escolhendo um pokemon')
+print('> O narrador está escolhendo um pokemon')
 
 print('-Esse aqui vai te dar uma surra, vamos lá amigão!')
 
@@ -119,11 +115,33 @@ elif oponente == '2':
 elif oponente == '3':
     print('-Squirtle, eu escolho você!')
 
+#Batalha de Pokemons
+
+hp_jogador = 30
+
+hp_oponente = 30
+
+if hp_jogador <=0:
+    print('Você perdeu! Mas não desista! Vamos de novo?')
+
+if hp_oponente <=0:
+    print('Você ganhou!')
+    print('-Meus parabéns,isso é um grande passo em sua jornada! Vamos de novo qualquer dia desses!')
+
+tackle = random.randint(5, 7)
+scratch =random.randint(4, 8)
+
+print('1-tackle, 2-scratch')
+battle = input('A batalha começou o que você quer fazer?')
+if battle == '1':
+    dano = tackle = random.randint(5, 7)
+    hp_oponente -=dano
+print( 'hp oponente', hp_oponente)
 
 
+#Crítico pode ser em base de sorte, estilo (if random.crit>5: random.num(1,5)+ ataque
 
-
-
+#Ataques de redução de status podem afetar diretamente if growl: defesa-2/mas como deixar isso temporário?
 
 
 
