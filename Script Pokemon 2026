@@ -1,3 +1,4 @@
+import random
 
 print('-Olá, caro treinador! Vamos nos aventurar nessa linda jornada!')
 
@@ -18,15 +19,22 @@ if n == 'n':
     nome = input('Digite seu nome novamente: ')
     n = input('-O seu nome está correto? (s/n): ').lower()
 
+while n not in ('s','n'):
+    n = input('-Não entendi, está ou não está correto? (s/n): ').lower()
+
 
 if n == 'n':
     print('-Ah, erros acontecem né? Mesmo que seja mais de uma vez... Sem problema, vamos de novo!')
     nome = input('Digite seu nome novamente: ')
     n = input('O seu nome está correto? (s/n): ').lower()
 
-while n == 'n':
+while n not in 's':
     nome = input('Digite seu nome mais uma vez: ')
     n = input('O seu nome está correto? (s/n): ').lower()
+    if n == 's':
+        print('-1...2...3... Pronto! Anotado!')
+
+
 
 print('-Que ótimo então,', nome, 'Vamos começar!')
 
@@ -35,9 +43,10 @@ print('1 - Bulbasaur')
 print('2 - Charmander')
 print('3 - Squirtle')
 
-escolha = [1,2,3]
+opcoes = ['1','2','3']
 
 escolha = input('Escolha seu Pokémon: ')
+
 
 if escolha == '1':
     print('Você escolheu Bulbasaur do tipo Grass!')
@@ -56,20 +65,22 @@ while escolha not in ('1','2','3'):
 
 confirmar = input('-Tem certeza de sua escolha? s/n ').lower()
 
-if confirmar != 's':
+while confirmar != 's':
 
     print('1-Bulbasaur/ 2-Charmander/ 3-Squirtle')
 
     escolha = input('-Acho que não entendi! Vamos novamente! Escolha seu Pokémon: ')
 
+    confirmar = input('-Tem certeza de sua escolha? s/n ').lower()
+
     if escolha == '1':
-        print('Você escolheu Bulbasaur do tipo Grass!')
+        print('Você escolheu Bulbasaur do tipo Planta!')
 
     if escolha == '2':
-        print('Você escolheu Charmander do tipo Fire!')
+        print('Você escolheu Charmander do tipo Fogo!')
 
     if escolha == '3':
-        print('Você escolheu Squirtle do tipo Water!')
+        print('Você escolheu Squirtle do tipo Água!')
 
 while escolha not in ('1', '2', '3'):
     print('1-Bulbasaur/ 2-Charmander/ 3-Squirtle')
@@ -79,11 +90,13 @@ while escolha not in ('1', '2', '3'):
     escolha = input('Qual você quer escolher ?: ')
 
 if escolha == '1':
-    print(nome,':','Vamos nessa Bubassaur!')
-if escolha == '2':
-    print(nome,':','Vamos nessa Squirtle!')
-if escolha == '3':
-    print(nome,':','Vamos nessa Charmander!')
+    print(nome,':','Vamos nessa Bulbasaur!')
+elif escolha == '2':
+    print(nome,':','Vamos nessa Charmander')
+elif escolha == '3':
+    print(nome,':','Vamos nessa Squirtled!')
+
+opcoes.remove(escolha)
 
 print('-Olha só, parece que ele gostou de você! Que ótimo!')
 
@@ -92,6 +105,21 @@ print("-Hmm...")
 print('-Você está querendo uma batalha não é? Eu sei que sim, então eu serei seu oponente')
 
 print('O narrador está escolhendo um pokemon')
+
+print('-Esse aqui vai te dar uma surra, vamos lá amigão!')
+
+oponente = random.choice(opcoes)
+
+if oponente == '1':
+    print('-Bulbasaur eu escolho você!')
+
+elif oponente == '2':
+    print('-Charmander, eu escolho você!')
+
+elif oponente == '3':
+    print('-Squirtle, eu escolho você!')
+
+
 
 
 
