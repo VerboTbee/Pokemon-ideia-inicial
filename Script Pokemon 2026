@@ -129,14 +129,29 @@ if hp_oponente <=0:
     print('-Meus parabéns,isso é um grande passo em sua jornada! Vamos de novo qualquer dia desses!')
 
 tackle = random.randint(5, 7)
-scratch =random.randint(4, 8)
+scratch = random.randint(4, 8)
+critic = random.randint(1, 10)
 
-print('1-tackle, 2-scratch')
-battle = input('A batalha começou o que você quer fazer?')
-if battle == '1':
-    dano = tackle = random.randint(5, 7)
-    hp_oponente -=dano
-print( 'hp oponente', hp_oponente)
+if escolha == '1':
+    while hp_oponente > 0:
+        print('____________________________')
+        print('Narrador HP:', hp_oponente)
+        print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
+        print(nome, 'HP:', hp_jogador)
+        print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
+        print('1-Tackle, 2-Grow, 3-Bag, 4-Fugir?')
+        print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
+        print('____________________________')
+        battle = input('A batalha começou o que você quer fazer?:')
+        if battle == '1':
+            dano = tackle = random.randint(5, 7)
+            hp_oponente -= dano
+            print(nome, 'Ataca, seu ataque causa', dano, 'de dano!')
+        if battle == '2':
+
+
+
+
 
 
 #Crítico pode ser em base de sorte, estilo (if random.crit>5: random.num(1,5)+ ataque
