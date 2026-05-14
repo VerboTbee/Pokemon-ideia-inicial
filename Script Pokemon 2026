@@ -43,6 +43,7 @@ print('3 - Squirtle')
 
 opcoes = ['1', '2', '3']
 
+
 escolha = input('Escolha seu Pokémon: ')
 
 if escolha == '1':
@@ -99,8 +100,10 @@ print('-Olha só, parece que ele gostou de você! Que ótimo!')
 print("-Hmm...")
 
 print('-Você está querendo uma batalha não é? Eu sei que sim, então eu serei seu oponente')
+print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
 
 print('> O narrador está escolhendo um pokemon')
+print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
 
 print('-Esse aqui vai te dar uma surra, vamos lá amigão!')
 
@@ -126,35 +129,83 @@ if hp_jogador <=0:
 
 if hp_oponente <=0:
     print('Você ganhou!')
+    print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
     print('-Meus parabéns,isso é um grande passo em sua jornada! Vamos de novo qualquer dia desses!')
 
 tackle = random.randint(5, 7)
-scratch = random.randint(4, 8)
-critic = random.randint(1, 10)
+scratch = random.randint(4, 9)
+tailwhip = random.randint(1, 7)
+grow = random.randint(1, 7)
+critic = random.randint(1, 12)
+defense: int = random.randint(1, 5)
+esquiva = random.randint(1, 12)
+dano = 0
 
 if escolha == '1':
     while hp_oponente > 0:
+
         print('____________________________')
         print('Narrador HP:', hp_oponente)
         print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
         print(nome, 'HP:', hp_jogador)
         print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
         print('1-Tackle, 2-Grow, 3-Bag, 4-Fugir?')
-        print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
         print('____________________________')
         battle = input('A batalha começou o que você quer fazer?:')
+        print('____________________________')
+
         if battle == '1':
-            dano = tackle = random.randint(5, 7)
-            hp_oponente -= dano
+            dano = tackle = random.randint(5, 8)
+            critic = random.randint(1, 12)
+
+            if critic > 9:
+                dano2 = random.randint(3, 5)
+                danocritico = dano + dano2
+                print('Acerto crítico!!')
+                print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
+                print('O seu ataque causou:', danocritico, '!')
+                hp_oponente -= danocritico
+
+            else:
+                defense = random.randint(1, 5)
+
+                if defense == 3:
+                    dano -= 2
+                    print('O oponente conseguiu se defender muito bem! Dano reduzido!')
+
+                print('O seu ataque causou:', dano, '!')
+                hp_oponente -= dano
+
+        else:
             print(nome, 'Ataca, seu ataque causa', dano, 'de dano!')
-        if battle == '2':
+
+    if hp_jogador <= 0:
+        print('Você perdeu! Mas não desista! Vamos de novo?')
+
+    if hp_oponente <= 0:
+       if oponente == '1':
+           print('Bulbassaur Desmaiou!!')
+
+    if oponente == '2':
+        print('Charmander Desmaiou!!')
+
+    if oponente == '3':
+        print('Squirtle Desmaiou!!')
+    print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
+    print('Você ganhou!')
+    print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
+    print('-Meus parabéns,isso é um grande passo em sua jornada! Vamos de novo qualquer dia desses!')
+
+
+
+        #if battle == '2':
 
 
 
 
 
 
-#Crítico pode ser em base de sorte, estilo (if random.crit>5: random.num(1,5)+ ataque
+
 
 #Ataques de redução de status podem afetar diretamente if growl: defesa-2/mas como deixar isso temporário?
 
