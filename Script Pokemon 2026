@@ -187,9 +187,8 @@ if escolha == '1':
                 if defense == 4:
                     dano -= 2
                     print('O oponente conseguiu se defender muito bem! Dano reduzido!')
-
-                print('O seu ataque causou:', dano, '!')
-                hp_oponente -= dano
+                    print('O seu ataque causou:', dano, '!')
+                    hp_oponente -= dano
 
         if battle == '1':
             print(nome, 'Ataca, seu ataque causa', dano, 'de dano!')
@@ -214,7 +213,7 @@ if escolha == '1':
         else:
             defense_oponente = random.randint(1, 8)
 
-            if defense_oponente == 3:
+            if defense_oponente == 3 and battle != '2':
                 danooponente -= 3
                 print('O ', nome, 'conseguiu se defender muito bem! Dano reduzido!')
 
@@ -226,9 +225,7 @@ if escolha == '1':
                     print('>Narrador Ataca, seu ataque causa', danooponente, 'de dano!')
                     print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
                     print('____________________________')
-        if danooponente <= 0:
-            danooponente +=1
-            print('O ataque não surtiu muito efeito!',danooponente,'de dano!')
+
 
 
 
@@ -246,7 +243,7 @@ if escolha == '1':
                  print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
 
 
-        acao_oponente = random.randint(1, 2)
+        acao_oponente = random.randint(1, 1)
         if acao_oponente == 1 and hp_oponente >0:
             danooponente = random.randint(4, 5)
             critic_oponente = random.randint(2, 13)
@@ -261,13 +258,26 @@ if escolha == '1':
             else:
                 defense_oponente = random.randint(1, 8)
 
-                if defense_oponente == 3:
+                if defense_oponente == 3 and battle != '2':
                     danooponente -= 2
                     print('O ',nome,'conseguiu se defender muito bem! Dano reduzido!')
 
-                if hp_oponente > 0:
-                    print('O ataque causou:', danooponente, '!')
+                if hp_oponente > 0 and battle == '2':
+                    danooponente -= 2
+                    print('O ataque reduzido causou:', danooponente, '!')
+                    print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
                     hp_jogador -= danooponente
+
+                if hp_oponente > 0 and battle != '2':
+                    print('O ataque causou:', danooponente, '!')
+                    print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
+                    hp_jogador -= danooponente
+
+                if danooponente <= 0:
+                    danooponente += 1
+                    print('O ataque não surtiu muito efeito!', danooponente, 'de dano!')
+
+
 
         else:
             print( '>Narrador Ataca, seu ataque causa', danooponente, 'de dano!')
