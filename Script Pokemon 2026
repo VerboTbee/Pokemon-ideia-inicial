@@ -155,9 +155,11 @@ dano = 0
 battle = 0
 danooponente= 0
 critic_oponente = 0
+potion_oponente = 2
+potion_jogador = 2
 
 if escolha == '1':
-    while hp_oponente > 0:
+    while hp_oponente > 0 and hp_jogador > 0:
 
         print('____________________________')
         print('Narrador HP:', hp_oponente,'/ 30')
@@ -199,7 +201,7 @@ if escolha == '1':
                     print(nome, 'Ataca, seu ataque causa', dano, 'de dano!')
                     print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
 
-                    
+
         if hp_oponente > 0 and battle != '2':
             if oponente == '1':
                 print('-Nada mal,mas não foi o suficiente, Vamos lá Bulbassaur!')
@@ -246,11 +248,17 @@ if escolha == '1':
                     print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
                     print('____________________________')
 
+        if hp_oponente < 10 and  potion_oponente>0:
+            potion_oponente -= 1
+            hp_oponente += 15
+            print('')
 
-        acao_oponente = random.randint(1, 1)
-        if acao_oponente == 1 and hp_oponente >0:
-            danooponente = random.randint(4, 5)
-            critic_oponente = random.randint(2, 13)
+        else:
+            acao_oponente = random.randint(1, 1)
+
+            if acao_oponente == 1 and hp_oponente >0:
+                danooponente = random.randint(4, 5)
+                critic_oponente = random.randint(2, 13)
 
             if critic_oponente > 10 and battle != '2':
                 dano2oponente = random.randint(3, 5)
@@ -277,68 +285,57 @@ if escolha == '1':
                     print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
                     hp_jogador -= danooponente
 
-                if danooponente <= 0:
-                    danooponente += 1
-                    print('O ataque não surtiu muito efeito!', danooponente, 'de dano!')
+            if danooponente <= 0:
+                danooponente += 1
+                print('O ataque não surtiu muito efeito!', danooponente, 'de dano!')
 
 
 
-        else:
-            print( '>Narrador Ataca, seu ataque causa', danooponente, 'de dano!')
-            print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
-            print('____________________________')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            else:
+                print( '>Narrador Ataca, seu ataque causa', danooponente, 'de dano!')
+                print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
+                print('____________________________')
    #final
     if hp_jogador <= 0:
 
         if escolha == '1':
-            print('Bulbassaur Desmaiou!!')
-            print('____________________________')
-            print('Você perdeu! Mas não desista! Vamos de novo?')
-            print('-Nada mal, Vamos de novo!')
+         print('Bulbassaur Desmaiou!!')
+         print('____________________________')
+         print('Você perdeu! Mas não desista! Vamos de novo?')
+         print('-Nada mal, Vamos de novo!')
 
-        if escolha == '2':
-            print('Charmander Desmaiou!!')
-            print('____________________________')
-            print('Você perdeu! Mas não desista! Vamos de novo?')
-            print('-Nada mal, Vamos de novo!')
+    if escolha == '2':
 
-        if escolha == '3':
-            print('Squirtle Desmaiou!!')
-            print('____________________________')
-            print('Você perdeu! Mas não desista! Vamos de novo?')
-            print('-Nada mal, Vamos de novo!')
-
-    if hp_oponente <= 0:
-       if oponente == '1':
-           print('Bulbassaur Desmaiou!!')
-           print('____________________________')
-
-    if oponente == '2':
         print('Charmander Desmaiou!!')
         print('____________________________')
+        print('Você perdeu! Mas não desista! Vamos de novo?')
+        print('-Nada mal, Vamos de novo!')
 
-    if oponente == '3':
+    if escolha == '3':
+
         print('Squirtle Desmaiou!!')
         print('____________________________')
-    print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
-    print('Você ganhou!')
-    print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
-    print('-Meus parabéns,isso é um grande passo em sua jornada! Vamos de novo qualquer dia desses!')
-    print('____________________________')
+        print('Você perdeu! Mas não desista! Vamos de novo?')
+        print('-Nada mal, Vamos de novo!')
+
+        if hp_oponente <= 0:
+           if oponente == '1':
+               print('Bulbassaur Desmaiou!!')
+               print('____________________________')
+
+        if oponente == '2':
+            print('Charmander Desmaiou!!')
+            print('____________________________')
+
+        if oponente == '3':
+
+            print('Squirtle Desmaiou!!')
+            print('____________________________')
+            print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
+            print('Você ganhou!')
+            print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
+            print('-Meus parabéns,isso é um grande passo em sua jornada! Vamos de novo qualquer dia desses!')
+            print('____________________________')
 
 
 
