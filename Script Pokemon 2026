@@ -32,15 +32,18 @@ while n not in 's':
     n = input('O seu nome está correto? (s/n): ').lower()
     if n == 's':
         print('-1...2...3... Pronto! Anotado!')
+        print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
+
 
 print('-Que ótimo então,', nome, 'Vamos começar!')
+print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
 
-print(
-    '-Primeiro de tudo: Aqui nós usamos a imaginação! Então imagine uma mesa com 3 pokemons. Vamos escolher o seu parceiro de batalha')
+print('-Primeiro de tudo: Aqui nós usamos a imaginação! Então imagine uma mesa com 3 pokemons. Vamos escolher o seu parceiro de batalha')
+print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
 print('1 - Bulbasaur')
 print('2 - Charmander')
 print('3 - Squirtle')
-
+print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
 opcoes = ['1', '2', '3']
 
 
@@ -48,12 +51,15 @@ escolha = input('Escolha seu Pokémon: ')
 
 if escolha == '1':
     print('Você escolheu Bulbasaur do tipo Planta!')
+    print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
 
 elif escolha == '2':
     print('Você escolheu Charmander do tipo Fogo!')
+    print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
 
 elif escolha == '3':
     print('Você escolheu Squirtle do tipo Água!')
+    print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
 
 while escolha not in ('1', '2', '3'):
     print('1-Bulbasaur/ 2-Charmander/ 3-Squirtle')
@@ -72,12 +78,15 @@ while confirmar != 's':
 
     if escolha == '1':
         print('Você escolheu Bulbasaur do tipo Planta!')
+        print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
 
     if escolha == '2':
         print('Você escolheu Charmander do tipo Fogo!')
+        print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
 
     if escolha == '3':
         print('Você escolheu Squirtle do tipo Água!')
+        print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
 
 while escolha not in ('1', '2', '3'):
     print('1-Bulbasaur/ 2-Charmander/ 3-Squirtle')
@@ -88,10 +97,13 @@ while escolha not in ('1', '2', '3'):
 
 if escolha == '1':
     print(nome, ':', 'Vamos nessa Bulbasaur!')
+    print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
 elif escolha == '2':
     print(nome, ':', 'Vamos nessa Charmander')
+    print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
 elif escolha == '3':
     print(nome, ':', 'Vamos nessa Squirtled!')
+    print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
 
 opcoes.remove(escolha)
 
@@ -148,9 +160,9 @@ if escolha == '1':
     while hp_oponente > 0:
 
         print('____________________________')
-        print('Narrador HP:', hp_oponente)
+        print('Narrador HP:', hp_oponente,'/ 30')
         print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
-        print(nome, 'HP:', hp_jogador)
+        print(nome, 'HP:', hp_jogador,'/ 30')
         print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
         print('1-Tackle, 2-Grow, 3-Bag, 4-Fugir?')
         print('____________________________')
@@ -158,7 +170,7 @@ if escolha == '1':
         print('____________________________')
 
         if battle == '1':
-            dano = tackle = random.randint(4, 6)
+            dano = tackle = random.randint(4, 5)
             critic = random.randint(1, 12)
 
             if critic > 9:
@@ -170,36 +182,76 @@ if escolha == '1':
                 hp_oponente -= danocritico
 
             else:
-                defense = random.randint(1, 5)
+                defense = random.randint(2, 9)
 
-                if defense == 3:
+                if defense == 4:
                     dano -= 2
                     print('O oponente conseguiu se defender muito bem! Dano reduzido!')
 
                 print('O seu ataque causou:', dano, '!')
                 hp_oponente -= dano
 
-        else:
+        if battle == '1':
             print(nome, 'Ataca, seu ataque causa', dano, 'de dano!')
             print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
 
-        if hp_oponente > 0:
+        if battle == '2':
+            print(nome, 'Utilizou o Grow!')
+            print('>O ataque do Narrador caiu!')
+
+            acao_oponente = random.randint(1, 1)
+            if acao_oponente == 1 and hp_oponente > 0:
+                danooponente = random.randint(4, 5)
+                critic_oponente = random.randint(2, 13)
+
+        if critic_oponente > 10 and battle != '2':
+            dano2oponente = random.randint(3, 5)
+            danocritico = danooponente + dano2oponente
+            print('Acerto crítico!!')
+            print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
+            print('O ataque do Narrador causou:', danocritico, '!')
+            hp_jogador -= danocritico
+        else:
+            defense_oponente = random.randint(1, 8)
+
+            if defense_oponente == 3:
+                danooponente -= 3
+                print('O ', nome, 'conseguiu se defender muito bem! Dano reduzido!')
+
+                if hp_oponente > 0 and battle == '2':
+                    danooponente -= 2
+                    print('O ataque reduzido causou:', danooponente, '!')
+                    hp_jogador -= danooponente
+                else:
+                    print('>Narrador Ataca, seu ataque causa', danooponente, 'de dano!')
+                    print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
+                    print('____________________________')
+        if danooponente <= 0:
+            danooponente +=1
+            print('O ataque não surtiu muito efeito!',danooponente,'de dano!')
+
+
+
+        if hp_oponente > 0 and battle != '2':
             if oponente == '1':
                 print('-Nada mal,mas não foi o suficiente, Vamos lá Bulbassaur!')
+                print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
 
             if oponente == '2':
                 print('-Nada mal,mas não foi o suficiente, Vamos lá Charmander!')
+                print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
 
             if oponente == '3':
                  print('-Nada mal,mas não foi o suficiente, Vamos lá Squirtle!')
+                 print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
 
 
-        acao_oponente = random.randint(1, 1)
-        if acao_oponente == 1:
-            danooponente = random.randint(4, 6)
+        acao_oponente = random.randint(1, 2)
+        if acao_oponente == 1 and hp_oponente >0:
+            danooponente = random.randint(4, 5)
             critic_oponente = random.randint(2, 13)
 
-            if critic_oponente > 10:
+            if critic_oponente > 10 and battle != '2':
                 dano2oponente = random.randint(3, 5)
                 danocritico = danooponente + dano2oponente
                 print('Acerto crítico!!')
@@ -207,17 +259,20 @@ if escolha == '1':
                 print('O ataque do Narrador causou:', danocritico, '!')
                 hp_jogador -= danocritico
             else:
-                defense_oponente = random.randint(1, 6)
+                defense_oponente = random.randint(1, 8)
 
                 if defense_oponente == 3:
                     danooponente -= 2
                     print('O ',nome,'conseguiu se defender muito bem! Dano reduzido!')
 
-                print('O ataque causou:', danooponente, '!')
-                hp_jogador -= danooponente
+                if hp_oponente > 0:
+                    print('O ataque causou:', danooponente, '!')
+                    hp_jogador -= danooponente
 
         else:
             print( '>Narrador Ataca, seu ataque causa', danooponente, 'de dano!')
+            print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
+            print('____________________________')
 
 
 
@@ -227,32 +282,49 @@ if escolha == '1':
 
 
 
+
+
+
+
+
+   #final
     if hp_jogador <= 0:
-        if hp_jogador <= 0:
-            if escolha == '1':
-                print('Bulbassaur Desmaiou!!')
+
+        if escolha == '1':
+            print('Bulbassaur Desmaiou!!')
+            print('____________________________')
+            print('Você perdeu! Mas não desista! Vamos de novo?')
+            print('-Nada mal, Vamos de novo!')
 
         if escolha == '2':
             print('Charmander Desmaiou!!')
+            print('____________________________')
+            print('Você perdeu! Mas não desista! Vamos de novo?')
+            print('-Nada mal, Vamos de novo!')
 
         if escolha == '3':
             print('Squirtle Desmaiou!!')
-        print('Você perdeu! Mas não desista! Vamos de novo?')
-        print('-Nada mal, Vamos de novo!')
+            print('____________________________')
+            print('Você perdeu! Mas não desista! Vamos de novo?')
+            print('-Nada mal, Vamos de novo!')
 
     if hp_oponente <= 0:
        if oponente == '1':
            print('Bulbassaur Desmaiou!!')
+           print('____________________________')
 
     if oponente == '2':
         print('Charmander Desmaiou!!')
+        print('____________________________')
 
     if oponente == '3':
         print('Squirtle Desmaiou!!')
+        print('____________________________')
     print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
     print('Você ganhou!')
     print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
     print('-Meus parabéns,isso é um grande passo em sua jornada! Vamos de novo qualquer dia desses!')
+    print('____________________________')
 
 
 
@@ -265,7 +337,7 @@ if escolha == '1':
 
 
 
-#Ataques de redução de status podem afetar diretamente if growl: defesa-2/mas como deixar isso temporário?
+
 
 
 
