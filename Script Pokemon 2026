@@ -169,6 +169,12 @@ if escolha == '1':
         battle = input('O que você quer fazer?:')
         print('____________________________')
 
+        while battle  not in ('1', '2', '3', '4') :
+            print('1-Tackle, 2-Grow, 3-Bag, 4-Fugir?')
+            battle = input('O que você quer fazer?:')
+
+
+
         if battle == '1':
             dano = tackle = random.randint(4, 5)
             critic = random.randint(1, 12)
@@ -188,11 +194,25 @@ if escolha == '1':
                     dano -= 2
                     print('O oponente conseguiu se defender muito bem! Dano reduzido!')
                     print('O seu ataque causou:', dano, '!')
-                    hp_oponente -= dano
+                hp_oponente -= dano
+                if battle == '1' and critic < 9 and defense != 4:
+                    print(nome, 'Ataca, seu ataque causa', dano, 'de dano!')
+                    print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
 
-        if battle == '1':
-            print(nome, 'Ataca, seu ataque causa', dano, 'de dano!')
-            print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
+                    
+        if hp_oponente > 0 and battle != '2':
+            if oponente == '1':
+                print('-Nada mal,mas não foi o suficiente, Vamos lá Bulbassaur!')
+                print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
+
+            if oponente == '2':
+                print('-Nada mal,mas não foi o suficiente, Vamos lá Charmander!')
+                print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
+
+            if oponente == '3':
+                 print('-Nada mal,mas não foi o suficiente, Vamos lá Squirtle!')
+                 print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
+
 
         if battle == '2':
             print(nome, 'Utilizou o Grow!')
@@ -225,22 +245,6 @@ if escolha == '1':
                     print('>Narrador Ataca, seu ataque causa', danooponente, 'de dano!')
                     print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
                     print('____________________________')
-
-
-
-
-        if hp_oponente > 0 and battle != '2':
-            if oponente == '1':
-                print('-Nada mal,mas não foi o suficiente, Vamos lá Bulbassaur!')
-                print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
-
-            if oponente == '2':
-                print('-Nada mal,mas não foi o suficiente, Vamos lá Charmander!')
-                print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
-
-            if oponente == '3':
-                 print('-Nada mal,mas não foi o suficiente, Vamos lá Squirtle!')
-                 print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
 
 
         acao_oponente = random.randint(1, 1)
