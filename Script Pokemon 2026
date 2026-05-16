@@ -259,7 +259,7 @@ if escolha == '1':
         else:
             defense_oponente = random.randint(1, 8)
 
-            if defense_oponente == 3 and battle != '2':
+            if defense_oponente == 3 and battle != '2' and battle != '3':
                 danooponente -= 3
                 print('>O ', nome, 'conseguiu se defender muito bem! Dano reduzido!')
 
@@ -283,7 +283,7 @@ if escolha == '1':
                 hp_jogador += 15
                 if hp_jogador > 30:
                     hp_jogador = 30
-        if potion_jogador < 0:
+        if potion_jogador == 0:
             print('>Você não tem mais Poções!')
             while battle not in ('1', '2', '4'):
                 print('1-Tackle, 2-Grow, 3-Bag, 4-Fugir?')
@@ -314,11 +314,11 @@ if escolha == '1':
             else:
                 defense_oponente = random.randint(1, 8)
 
-                if defense_oponente == 3 and battle != '2':
+                if defense_oponente == 3 and battle != '2' and battle != '3':
                     danooponente -= 2
                     print('>O ',nome,'conseguiu se defender muito bem! Dano reduzido!')
 
-                if hp_oponente > 0 and battle == '2':
+                if hp_oponente > 0 and battle == '2'and battle != '3':
                     danooponente -= 2
                     print('>O ataque reduzido causou:', danooponente, '!')
                     print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
