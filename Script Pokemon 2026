@@ -157,6 +157,7 @@ danooponente= 0
 critic_oponente = 0
 potion_oponente = 2
 potion_jogador = 2
+fugir = 0
 
 if escolha == '1':
     while hp_oponente > 0 and hp_jogador > 0:
@@ -174,6 +175,29 @@ if escolha == '1':
         while battle  not in ('1', '2', '3', '4') :
             print('1-Tackle, 2-Grow, 3-Bag, 4-Fugir?')
             battle = input('>O que você quer fazer?:')
+
+        if battle == '4':
+            print('>Fugir? em uma batalha puramente scriptada? Vai sonhando!')
+            fugir =+ 1
+
+
+            while battle not in ('1', '2', '3',) and hp_jogador > 0 :
+                print('1-Tackle, 2-Grow, 3-Bag, 4-Fugir?')
+                battle = input('>O que você quer fazer?:')
+                if battle == '4':
+                    print('>De novo? C não vai sair daqui sem batalhar! ')
+                    fugir += 1
+                if fugir > 2:
+                    print('C é CHATÃO viu? Joga logo fi!')
+                if fugir>3:
+                    print('Bixo...')
+                if fugir > 4:
+                    print('...')
+                if fugir > 5:
+                    print('...')
+                if fugir > 6:
+                    print('OK então')
+                    hp_jogador -= 30
 
 
 
@@ -202,7 +226,7 @@ if escolha == '1':
                     print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
 
 
-        if hp_oponente > 0 and battle != '2':
+        if hp_oponente > 0 and battle != '2'and battle != '4' and battle != '3':
             if oponente == '1':
                 print('-Nada mal,mas não foi o suficiente, Vamos lá Bulbassaur!')
                 print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
@@ -246,6 +270,13 @@ if escolha == '1':
 
 
         if battle == '3':
+            if hp_jogador == 30:
+                print('>Você não precisa disso!')
+                while battle not in ('1', '2', '4'):
+                    print('1-Tackle, 2-Grow, 3-Bag, 4-Fugir?')
+                    battle = input('>O que você quer fazer?:')
+                    if battle == '3':
+                        print('>Você não precisa disso!')
             if potion_jogador > 0:
                 print('>',nome, 'Utilizou uma potion +15 pv!')
                 potion_jogador -= 1
@@ -308,38 +339,44 @@ if escolha == '1':
         if escolha == '1':
          print('Bulbassaur Desmaiou!!')
          print('____________________________')
-         print('Você perdeu! Mas não desista! Vamos de novo?')
+         print('>Você perdeu! Mas não desista! Vamos de novo?')
          print('-Nada mal, Vamos de novo!')
 
     if escolha == '2':
 
         print('Charmander Desmaiou!!')
         print('____________________________')
-        print('Você perdeu! Mas não desista! Vamos de novo?')
+        print('>Você perdeu! Mas não desista! Vamos de novo?')
         print('-Nada mal, Vamos de novo!')
 
     if escolha == '3':
 
         print('Squirtle Desmaiou!!')
         print('____________________________')
-        print('Você perdeu! Mas não desista! Vamos de novo?')
+        print('>Você perdeu! Mas não desista! Vamos de novo?')
         print('-Nada mal, Vamos de novo!')
 
         if hp_oponente <= 0:
            if oponente == '1':
                print('Bulbassaur Desmaiou!!')
                print('____________________________')
+               print('>Você ganhou!')
+               print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
+               print('-Meus parabéns,isso é um grande passo em sua jornada! Vamos de novo qualquer dia desses!')
 
         if oponente == '2':
             print('Charmander Desmaiou!!')
             print('____________________________')
+            print('>Você ganhou!')
+            print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
+            print('-Meus parabéns,isso é um grande passo em sua jornada! Vamos de novo qualquer dia desses!')
 
         if oponente == '3':
 
             print('Squirtle Desmaiou!!')
             print('____________________________')
             print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
-            print('Você ganhou!')
+            print('>Você ganhou!')
             print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
             print('-Meus parabéns,isso é um grande passo em sua jornada! Vamos de novo qualquer dia desses!')
             print('____________________________')
