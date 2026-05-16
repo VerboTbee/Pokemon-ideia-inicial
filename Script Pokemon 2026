@@ -283,7 +283,7 @@ if escolha == '1':
                 hp_jogador += 15
                 if hp_jogador > 30:
                     hp_jogador = 30
-        if potion_jogador == 0:
+        if potion_jogador == 0 and battle == '3':
             print('>Você não tem mais Poções!')
             while battle not in ('1', '2', '4'):
                 print('1-Tackle, 2-Grow, 3-Bag, 4-Fugir?')
