@@ -1,6 +1,6 @@
 import random
 
-
+#-----------------------Início------------------------#
 print('-Olá, caro treinador! Vamos nos aventurar nessa linda jornada!')
 
 nome = input('Primeiro por favor digite o seu nome: ')
@@ -38,6 +38,9 @@ while n not in 's':
 print('-Que ótimo então,', nome, 'Vamos começar!')
 print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
 
+
+#--------------------------Escolha inicial-------------------------# 
+
 print('-Primeiro de tudo: Aqui nós usamos a imaginação! Então imagine uma mesa com 3 pokemons. Vamos escolher o seu parceiro de batalha')
 print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
 print('1 - Bulbasaur')
@@ -68,6 +71,7 @@ while escolha not in ('1', '2', '3'):
 
 confirmar = input('-Tem certeza de sua escolha? s/n ').lower()
 
+#--------------------Enquanto não confirmar-----------------#
 while confirmar != 's':
 
     print('1-Bulbasaur/ 2-Charmander/ 3-Squirtle')
@@ -95,6 +99,9 @@ while escolha not in ('1', '2', '3'):
 
     escolha = input('Qual você quer escolher ?: ')
 
+
+#--------------Após a escolha--------------------#
+
 if escolha == '1':
     print(nome, ':', 'Vamos nessa Bulbasaur!')
     print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
@@ -102,10 +109,12 @@ elif escolha == '2':
     print(nome, ':', 'Vamos nessa Charmander')
     print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
 elif escolha == '3':
-    print(nome, ':', 'Vamos nessa Squirtled!')
+    print(nome, ':', 'Vamos nessa Squirtle!')
     print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
 
+#------------------------Opção de retirada-----------------------#
 opcoes.remove(escolha)
+#------------------------Opção de retirada-----------------------#
 
 print('-Olha só, parece que ele gostou de você! Que ótimo!')
 
@@ -119,6 +128,8 @@ print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
 
 print('-Esse aqui vai te dar uma surra, vamos lá amigão!')
 
+#-----------Escolha do oponente--------------#
+
 oponente = random.choice(opcoes)
 
 if oponente == '1':
@@ -130,27 +141,11 @@ elif oponente == '2':
 elif oponente == '3':
     print('-Squirtle, eu escolho você!')
 
-#Batalha de Pokemons
 
+
+#---------------Variáveis de dano e armazenamento-------------#
 hp_jogador = 30
-
 hp_oponente = 30
-
-if hp_jogador <=0:
-    print('>Você perdeu! Mas não desista! Vamos de novo?')
-
-if hp_oponente <=0:
-    print('>Você ganhou!')
-    print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
-    print('-Meus parabéns,isso é um grande passo em sua jornada! Vamos de novo qualquer dia desses!')
-
-tackle = random.randint(4, 6)
-scratch = random.randint(4, 9)
-tailwhip = random.randint(1, 7)
-grow = random.randint(1, 7)
-critic = random.randint(1, 12)
-defense: int = random.randint(1, 5)
-esquiva = random.randint(1, 12)
 dano = 0
 battle = 0
 danooponente= 0
@@ -158,19 +153,29 @@ critic_oponente = 0
 potion_oponente = 2
 potion_jogador = 2
 fugir = 0
+turno = 1
+if turno < 1:
+    turno = 1
+if turno > 2:
+    turno = 2
 
+
+#-------------------Turno_Escolha Jogador---------------------#
+
+
+#---------Variável Bulbassaur-------------#
 if escolha == '1':
     while hp_oponente > 0 and hp_jogador > 0:
-
-        print('____________________________')
-        print('Narrador HP:', hp_oponente,'/ 30')
-        print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
-        print(nome, 'HP:', hp_jogador,'/ 30')
-        print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
-        print('1-Tackle, 2-Grow, 3-Bag, 4-Fugir?')
-        print('____________________________')
-        battle = input('>O que você quer fazer?:')
-        print('____________________________')
+        if turno == 1:
+            print('____________________________')
+            print('Narrador HP:', hp_oponente,'/ 30')
+            print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
+            print(nome, 'HP:', hp_jogador,'/ 30')
+            print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
+            print('1-Tackle, 2-Grow, 3-Bag, 4-Fugir?')
+            print('____________________________')
+            battle = input('>O que você quer fazer?:')
+            print('____________________________')
 
         while battle  not in ('1', '2', '3', '4') :
             print('1-Tackle, 2-Grow, 3-Bag, 4-Fugir?')
@@ -201,7 +206,9 @@ if escolha == '1':
 
 
 
-        if battle == '1':
+
+#------------------Batalha Jogador-------------------------#
+        if battle == '1' and turno == 1:
             dano = tackle = random.randint(4, 5)
             critic = random.randint(1, 12)
 
@@ -224,9 +231,13 @@ if escolha == '1':
                 if battle == '1' and critic < 9 and defense != 4:
                     print('>',nome, 'Ataca, seu ataque causa', dano, 'de dano!')
                     print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
+        turno += 1
 
 
-        if hp_oponente > 0 and battle != '2'and battle != '4' and battle != '3':
+#--------------------Oponente Fala---------------------#
+        
+        
+        if hp_oponente > 0 and battle != '2'and battle != '4' and battle != '3' and turno == 2:
             if oponente == '1':
                 print('-Nada mal,mas não foi o suficiente, Vamos lá Bulbassaur!')
                 print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
@@ -239,27 +250,32 @@ if escolha == '1':
                  print('-Nada mal,mas não foi o suficiente, Vamos lá Squirtle!')
                  print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
 
-
-        if battle == '2':
+#----------------Jogador Utilizou o grow-------------------#
+        
+        
+        if battle == '2' and turno ==1:
             print('>',nome, 'Utilizou o Grow!')
             print('>O ataque do Narrador caiu!')
+            turno += 1
 
             acao_oponente = random.randint(1, 1)
-            if acao_oponente == 1 and hp_oponente > 0 :
+            if acao_oponente == 1 and hp_oponente > 0 and turno ==2:
                 danooponente = random.randint(4, 5)
                 critic_oponente = random.randint(2, 13)
 
-        if critic_oponente > 10 and battle != '2':
+
+        if critic_oponente > 10 and battle != '2'and turno == 2:
             dano2oponente = random.randint(3, 5)
             danocritico = danooponente + dano2oponente
             print('>Acerto crítico!!')
             print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
             print('>O ataque do Narrador causou:', danocritico, '!')
             hp_jogador -= danocritico
+            turno -= 1
         else:
             defense_oponente = random.randint(1, 8)
 
-            if defense_oponente == 3 and battle != '2' and battle != '3':
+            if defense_oponente == 3 and battle != '2' and battle != '3' and critic_oponente < 10:
                 danooponente -= 3
                 print('>O ', nome, 'conseguiu se defender muito bem! Dano reduzido!')
 
@@ -267,7 +283,9 @@ if escolha == '1':
                     danooponente -= 2
                     print('>O ataque reduzido causou:', danooponente, '!')
                     hp_jogador -= danooponente
+                    turno -= 1
 
+#-------------------Jogador bag----------------#
 
         if battle == '3':
             if hp_jogador == 30:
@@ -277,12 +295,13 @@ if escolha == '1':
                     battle = input('>O que você quer fazer?:')
                     if battle == '3':
                         print('>Você não precisa disso!')
-            if potion_jogador > 0:
+            if potion_jogador > 0 and hp_jogador != 30:
                 print('>',nome, 'Utilizou uma potion +15 pv!')
                 potion_jogador -= 1
                 hp_jogador += 15
                 if hp_jogador > 30:
                     hp_jogador = 30
+                    turno +=1
         if potion_jogador == 0 and battle == '3':
             print('>Você não tem mais Poções!')
             while battle not in ('1', '2', '4'):
@@ -292,33 +311,40 @@ if escolha == '1':
                     print('>Você não tem Poções!')
 
 
-        if hp_oponente < 10 and  potion_oponente>0:
+#------------Oponente_poção----------------#
+        
+        
+        if hp_oponente < 10 and  potion_oponente>0 and turno == 2:
             potion_oponente -= 1
             hp_oponente += 15
             print('>O Narrador usou uma potion +15 pv! ')
 
+#------------Ação lutar se não quiser usar--------------#
+        
+        
         else:
             acao_oponente = random.randint(1, 1)
 
-            if acao_oponente == 1 and hp_oponente >0:
+            if acao_oponente == 1 and hp_oponente >0 and turno == 2:
                 danooponente = random.randint(4, 5)
                 critic_oponente = random.randint(2, 13)
 
-            if critic_oponente > 10 and battle != '2':
+            if critic_oponente > 10 and battle != '2'and turno == 2:
                 dano2oponente = random.randint(3, 5)
                 danocritico = danooponente + dano2oponente
                 print('>Acerto crítico!!')
                 print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
                 print('>O ataque do Narrador causou:', danocritico, '!')
                 hp_jogador -= danocritico
+                turno -= 1
             else:
                 defense_oponente = random.randint(1, 8)
 
-                if defense_oponente == 3 and battle != '2' and battle != '3':
+                if defense_oponente == 3 and battle != '2' and battle != '3'and turno == 2:
                     danooponente -= 2
                     print('>O ',nome,'conseguiu se defender muito bem! Dano reduzido!')
 
-                if hp_oponente > 0 and battle == '2'and battle != '3':
+                if hp_oponente > 0 and battle == '2'and battle != '3'and turno == 2:
                     danooponente -= 2
                     print('>O ataque reduzido causou:', danooponente, '!')
                     print('ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ')
@@ -332,8 +358,9 @@ if escolha == '1':
             if danooponente <= 0:
                 danooponente += 1
                 print('>O ataque não surtiu muito efeito!', danooponente, 'de dano!')
+        turno -= 1
 
-   #final
+   #------------------final-------------------#
     if hp_jogador <= 0:
 
         if escolha == '1':
@@ -383,8 +410,7 @@ if escolha == '1':
 
 
 
-        #if battle == '2':
-
+   
 
 
 
